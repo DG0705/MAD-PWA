@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1027859599392",
+    "project_id": "fir-practical-7ea6c",
+    "storage_bucket": "fir-practical-7ea6c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1027859599392:android:b700bb291c654b137a2c45",
+        "android_client_info": {
+          "package_name": "com.example.hello_world_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDr-O3RYFeveo-mWH1OvMvM4Ky7Zyh_Z7U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
