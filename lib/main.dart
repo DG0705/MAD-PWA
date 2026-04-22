@@ -764,3 +764,145 @@ class _StudentPageState extends State<StudentPage> {
     );
   }
 }
+
+
+
+
+
+//practical 8
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  final List<Map<String, String>> products = [
+    {"name": "Nike Shoes", "price": "₹4999"},
+    {"name": "Adidas Shoes", "price": "₹5999"},
+    {"name": "Puma Shoes", "price": "₹3999"},
+    {"name": "Reebok Shoes", "price": "₹4599"},
+    {"name": "Campus Shoes", "price": "₹2999"},
+    {"name": "Woodland Shoes", "price": "₹6999"},
+  ];
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "E-Commerce UI",
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text("Shoe Store"),
+        ),
+        body: LayoutBuilder(
+          builder: (context, constraints) {
+            int crossAxisCount =
+                constraints.maxWidth < 600 ? 2 : 4;
+
+            return Padding(
+              padding: EdgeInsets.all(10),
+              child: GridView.builder(
+                itemCount: products.length,
+                gridDelegate:
+                    SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: crossAxisCount,
+                  crossAxisSpacing: 10,
+                  mainAxisSpacing: 10,
+                  childAspectRatio: 0.75,
+                ),
+                itemBuilder: (context, index) {
+                  return Card(
+                    elevation: 5,
+                    child: Padding(
+                      padding: EdgeInsets.all(10),
+                      child: Column(
+                        mainAxisAlignment:
+                            MainAxisAlignment.center,
+                        children: [
+                          Icon(
+                            Icons.shopping_bag,
+                            size: 60,
+                          ),
+
+                          SizedBox(height: 10),
+
+                          Text(
+                            products[index]["name"]!,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+
+                          SizedBox(height: 10),
+
+                          Text(
+                            products[index]["price"]!,
+                            style: TextStyle(
+                              fontSize: 16,
+                            ),
+                          ),
+
+                          SizedBox(height: 10),
+
+                          ElevatedButton(
+                            onPressed: () {},
+                            child: Text("Add to Cart"),
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+
+
+
+
+//practical 9
+
+
+import React from "react";
+import "./App.css";
+
+function App() {
+  const products = [
+    { name: "Nike Shoes", price: "₹4999" },
+    { name: "Adidas Shoes", price: "₹5999" },
+    { name: "Puma Shoes", price: "₹3999" }
+  ];
+
+  return (
+    <div style={{ padding: "20px" }}>
+      <h1>Shoe Store PWA</h1>
+
+      {products.map((product, index) => (
+        <div
+          key={index}
+          style={{
+            border: "1px solid #ccc",
+            padding: "15px",
+            margin: "10px 0"
+          }}
+        >
+          <h2>{product.name}</h2>
+          <p>{product.price}</p>
+          <button>Add to Cart</button>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+export default App;
